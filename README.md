@@ -53,6 +53,17 @@ Before getting started, ensure you have the following components installed:
 - [Docker](https://www.docker.com/products/docker-desktop/)
 
 
+## Build and Run the Application:
+
+Execute the following command to build and run the application:
+
+````bash
+mvn clean package install
+mvn spring-boot:run
+````
+
+
+
 ### Optional Requirement
 
 1. **Docker.**
@@ -83,14 +94,6 @@ Before getting started, ensure you have the following components installed:
    spring.datasource.username=your_database_username
    spring.datasource.password=your_database_password
    ```
-
-## Build and Run the Application:
-
-Execute the following command to build and run the application:
-
-````bash
-mvn spring-boot:run
-````
 
 ## Access the Application
 
