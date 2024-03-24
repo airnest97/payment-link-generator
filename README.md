@@ -123,7 +123,7 @@ The Invoice and Payment Link System offers the following API endpoints:
 
 ### Future Improvements
 
-Given the short time frame for the task, I could not implement security on the application endpoints. If given more time, I would add security to the application, thereby making the application more secured for usage.
+Given the short time frame for the task, I could not implement security on the application endpoints. If given more time, I would add security to the application, thereby making the application more secured for usage in production.
 
 
 
