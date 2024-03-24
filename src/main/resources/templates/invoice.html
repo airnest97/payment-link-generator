@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .company-info {
+            margin-bottom: 20px;
+        }
+        .company-info h2 {
+            margin: 5px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .total {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>Invoice</h1>
+    </div>
+    <div class="company-info">
+        <h2 th:text="${merchant.name}">Company Name</h2>
+        <p th:text="${merchant.address}">123 Company Address<br>
+        </p>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Iterate over productDetails -->
+        <tr th:each="productDetails : ${product}">
+            <td th:text="${productDetails.productName}"></td>
+            <td th:text="${productDetails.productQuantity}"></td>
+            <td th:text="${productDetails.productPrice}"></td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2" class="total">Total:</td>
+            <!-- Display totalAmount variable -->
+            <td th:text="${invoice.totalAmount}"></td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+</html>
